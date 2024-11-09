@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="task2" />
+    <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="gitIgnore">
+      <change afterPath="$PROJECT_DIR$/spaceship-api/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/SecurityConfigDevelop.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/SecurityConfigDevelop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,7 +59,7 @@
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/jlam/W2M/2/spaceship-api/spaceship-api/src/main/resources/db/sql",
+    "last_opened_file_path": "C:/Users/jlam/W2M/2/spaceship-api/spaceship-api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,15 +77,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api" />
       <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\sql" />
       <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\java\com\w2m\spaceship_api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src" />
       <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\changelog" />
       <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\changelog\sql" />
       <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources.db" />
-      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources" />
-      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -109,6 +119,8 @@
       <command value="mvn liquibase:update " />
       <command value="mvnw spring-boot:run" />
       <command value="mvn spring-boot:run" />
+      <command value="mvn mvn clean package -DskipTests" />
+      <command value="mvn clean package -DskipTests" />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SpaceshipApiApplication">
@@ -143,37 +155,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpaceshipControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spaceship-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.w2m.spaceships_api.configuration.develop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SpaceshipControllerIntegrationTest.testCreateSpaceship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spaceship-api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.w2m.spaceships_api.configuration.develop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
-      <option name="METHOD_NAME" value="testCreateSpaceship" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SpaceshipApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="spaceships-api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.w2m.spaceships_api.SpaceshipApiApplication" />
@@ -181,13 +162,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
+    <configuration name="resources.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="redis" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="spaceship-api/src/main/resources/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="spaceship-api/dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="sourceFilePath" value="spaceship-api/dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.spaceship-api/dockerfile" />
+        <item itemvalue="Docker.resources.redis: Compose Deployment" />
         <item itemvalue="JUnit.All in spaceships-api" />
         <item itemvalue="JUnit.All in spaceship-api" />
         <item itemvalue="JUnit.GlobalExceptionHandlerTest" />
-        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest" />
-        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest.testCreateSpaceship" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +212,8 @@
       <workItem from="1731094284478" duration="24955000" />
       <workItem from="1731119276447" duration="5115000" />
       <workItem from="1731124410187" duration="11112000" />
-      <workItem from="1731158300096" duration="13064000" />
+      <workItem from="1731158300096" duration="13539000" />
+      <workItem from="1731173048302" duration="5189000" />
     </task>
     <task id="LOCAL-00001" summary="task1">
       <created>1731134619752</created>
@@ -218,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731172014996</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="task2">
+      <created>1731172636946</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731172636946</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,8 +267,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="task1" />
-    <MESSAGE value="task2" />
-    <option name="LAST_COMMIT_MESSAGE" value="task2" />
+    <MESSAGE value="gitIgnore" />
+    <option name="LAST_COMMIT_MESSAGE" value="gitIgnore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -279,6 +297,14 @@
           <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/SpaceshipController.java</url>
           <line>83</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java</url>
+          <line>26</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
