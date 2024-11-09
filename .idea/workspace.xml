@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="task1">
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/ConfigConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/SwaggerConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/SecurityConfigDevelop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/StartupRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/prod/SecurityConfigProd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/FaviconController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/SpaceshipApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/SpaceshipApiApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/OpenApiConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/OpenApiConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/repository/SpaceshipDataLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/SpaceshipApiApplicationTests.java" beforeDir="false" />
-    </list>
+    <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="task2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -219,7 +202,7 @@
       <workItem from="1731094284478" duration="24955000" />
       <workItem from="1731119276447" duration="5115000" />
       <workItem from="1731124410187" duration="11112000" />
-      <workItem from="1731158300096" duration="12710000" />
+      <workItem from="1731158300096" duration="13064000" />
     </task>
     <task id="LOCAL-00001" summary="task1">
       <created>1731134619752</created>
@@ -228,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1731134619752</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="task2">
+      <created>1731172014996</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731172014996</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,7 +229,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -247,7 +249,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="task1" />
-    <option name="LAST_COMMIT_MESSAGE" value="task1" />
+    <MESSAGE value="task2" />
+    <option name="LAST_COMMIT_MESSAGE" value="task2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
