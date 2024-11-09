@@ -5,6 +5,7 @@ import com.w2m.spaceships_api.repository.SpaceshipRepository;
 import com.w2m.spaceships_api.exception.SpaceshipApiException;
 import org.apache.logging.log4j.Level;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,7 @@ public class SpaceshipService {
         return spaceshipRepository.findAll(PageRequest.of(page, size));
     }
 
+    @Cacheable(value = "spaceships", key = "#id")
     public Spaceship getSpaceshipById(Long id) {
         return spaceshipRepository.findById(id).orElseThrow(() -> new SpaceshipApiException("Spaceship with ID: " + id + " not found", Level.WARN));
     }

@@ -11,8 +11,8 @@ public class OpenApiConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .info(new Info().title("Spaceship API")
+                .info(new Info().title("Spaceship_API")
                         .version("1.0")
-                        .description("Documentación de la API para gestión de naves espaciales"));
+                        .description("Spacechips managing"));
     }
 }

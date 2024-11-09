@@ -1,8 +1,30 @@
+# Spaceship API Project
 
+This is a Java project using Spring Boot with Liquibase for database version control and Swagger for API documentation.
 
-## Liquibase update command 
-mvn liquibase:update -Dliquibase.url=jdbc:h2:mem:testdb -Dliquibase.username=sa -Dliquibase.password=password -Dliquibase.driver=org.h2.Driver -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.yaml 
+## Prerequisites
+- Java 21
+- Maven
 
+## Basic Commands
 
-## Access to Swagger
-http://localhost:8080/swagger-ui/
+### 1. Compile, Download Dependencies, and Run Tests
+This command cleans the previous build, installs dependencies, and runs the tests.
+
+```bash
+mvn clean install
+```
+
+### 2. Start the Application
+This command starts the Spring Boot application on port 8080.
+
+```bash
+mvn spring-boot:run
+```
+
+## Access Swagger
+
+Once the application is running, you can access the API documentation in Swagger:
+
+http://localhost:8080/swagger-ui.html
+
