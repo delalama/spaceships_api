@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2oa4Js11E6Yl8jvAQYLGUBWvLsz" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jlam/W2M/2/spaceship-api/spaceship-api/src/main/resources/db/sql&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;91fa098b4e0c9e24ac9493222321e6c0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\sql" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\java\com\w2m\spaceship_api" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\changelog" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db\changelog\sql" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources.db" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources" />
+      <recent name="C:\Users\jlam\W2M\2\spaceship-api\spaceship-api\src\main\resources\db" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.w2m.spaceship_api.exception" />
+      <recent name="com.w2m.spaceship_api.controller" />
+      <recent name="com.w2m.spaceship_api.model" />
+      <recent name="com.w2m.spaceship_api.service" />
+      <recent name="com.w2m.spaceship_api.aspect" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.w2m.spaceship_api.utils" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn liquibase" />
+      <command value="mvn liquibase:diff" />
+      <command value="mvn liquibase:update" />
+      <command value="mvn liquibase --changeLogFile=src/main/resources/db/changelog/db.changelog-master.yaml update" />
+      <command value="mvn liquibase --changeLogFile=src/main/resources/db/changelog/db.changelog-master.yaml status " />
+      <command value="mvn liquibase:update " />
+      <command value="mvn liquibase:update -Dliquibase.url=jdbc:h2:mem:testdb -Dliquibase.username=sa -Dliquibase.password=password -Dliquibase.driver=org.h2.Driver -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.xml " />
+      <command value="mvn dependency:purge-local-repository" />
+      <command value="mvn clean validate" />
+      <command value="mvn liquibase:update -Dliquibase.url=jdbc:h2:mem:testdb -Dliquibase.username=sa -Dliquibase.password=password -Dliquibase.driver=org.h2.Driver -Dliquibase.changeLogFile=src/main/resources/db/changelog/db.changelog-master.yaml " />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpaceshipApiApplication">
+    <configuration name="All in spaceship-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceship-api" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GlobalExceptionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceship-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.exception.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.exception" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceship_api.exception.GlobalExceptionHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceship-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.configuration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipControllerIntegrationTest.testCreateSpaceship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceship-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.configuration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="testCreateSpaceship" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipControllerIntegrationTest.testUpdateSpaceship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceship-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.configuration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="testUpdateSpaceship" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="spaceships-api" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.w2m.spaceships_api.SpaceshipApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in spaceship-api" />
+        <item itemvalue="JUnit.GlobalExceptionHandlerTest" />
+        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest" />
+        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest.testCreateSpaceship" />
+        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest.testUpdateSpaceship" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="" />
+      <created>1731094283459</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731094283459</updated>
+      <workItem from="1731094284478" duration="24955000" />
+      <workItem from="1731119276447" duration="5115000" />
+      <workItem from="1731124410187" duration="10100000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/SpaceshipApiApplication.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/spaceship_api$All_in_spaceship_api.ic" NAME="All in spaceship-api Coverage Results" MODIFIED="1731121802738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/spaceship_api$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1731122561510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.w2m.spaceship_api.exception.*</FILTER>
+    </SUITE>
+  </component>
+</project>
