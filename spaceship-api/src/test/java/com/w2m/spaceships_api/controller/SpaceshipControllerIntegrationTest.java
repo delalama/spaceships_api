@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
@@ -44,10 +44,27 @@ public class SpaceshipControllerIntegrationTest {
         spaceshipRepository.deleteAll();
     }
 
+    private Spaceship getSpaceShip() {
+        return Spaceship.builder()
+                .id(null)
+                .name("Galactica")
+                .model("X-100")
+                .creationDate(LocalDate.of(2024, 1, 1))
+                .build();
+    }
+
+    private Spaceship getSpaceShip2() {
+        return Spaceship.builder()
+                .id(null)
+                .name("Galactica2")
+                .model("X-100")
+                .creationDate(LocalDate.of(2024, 1, 1))
+                .build();
+    }
+
     @Test
     public void testGetAllSpaceships() throws Exception {
-        Spaceship spaceship = new Spaceship(null, "Galactica", "X-100", new Date());
-        spaceshipRepository.save(spaceship);
+        spaceshipRepository.save(getSpaceShip());
         mockMvc.perform(
                         get(ApiConstants.SLASH + ApiConstants.SPACESHIPS)
                                 .param("page", "0")
@@ -60,11 +77,22 @@ public class SpaceshipControllerIntegrationTest {
     }
 
     @Test
+    public void testGetAllSpaceshipsNotFoundStatus() throws Exception {
+        mockMvc.perform(
+                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS)
+                                .param("page", "0")
+                                .param("size", "10")
+                                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent());
+    }
+
+    @Test
     public void testGetSpaceshipById() throws Exception {
-        Spaceship spaceship = new Spaceship(null, "Galactica", "X-100", new Date());
+        Spaceship spaceship = getSpaceShip();
+
         spaceship = spaceshipRepository.save(spaceship);
         mockMvc.perform(
-                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + ApiConstants.ID, spaceship.getId())
+                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + spaceship.getId())
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.name").value("Galactica"));
@@ -72,8 +100,8 @@ public class SpaceshipControllerIntegrationTest {
 
     @Test
     public void testGetSpaceshipsByName() throws Exception {
-        Spaceship spaceship1 = new Spaceship(null, "Galactica", "X-100", new Date());
-        Spaceship spaceship2 = new Spaceship(null, "Galactica", "X-200", new Date());
+        Spaceship spaceship1 = getSpaceShip();
+        Spaceship spaceship2 = getSpaceShip2();
         spaceshipRepository.save(spaceship1);
         spaceshipRepository.save(spaceship2);
         mockMvc.perform(
@@ -85,16 +113,17 @@ public class SpaceshipControllerIntegrationTest {
                 .andExpect(jsonPath("$[0].name")
                         .value("Galactica"))
                 .andExpect(jsonPath("$[1].name")
-                        .value("Galactica"));
+                        .value("Galactica2"));
     }
 
     @Test
     public void testUpdateSpaceship() throws Exception {
-        Spaceship spaceship = new Spaceship(null, "Galactica", "X-100", new Date());
-        Spaceship replacingSpaceship = new Spaceship(null, "Galactica Updated", "X-100", new Date());
+        Spaceship spaceship = getSpaceShip();
+        Spaceship replacingSpaceship = Spaceship.builder().name("Galactica Updated").build();
+
         spaceship = spaceshipRepository.save(spaceship);
         mockMvc.perform(
-                        put(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + ApiConstants.ID, spaceship.getId())
+                        put(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + spaceship.getId())
                                 .contentType(MediaType.APPLICATION_JSON)
                                 .content(replacingSpaceship.toJson())
                                 .accept(MediaType.APPLICATION_JSON))
@@ -105,10 +134,10 @@ public class SpaceshipControllerIntegrationTest {
 
     @Test
     public void testDeleteSpaceship() throws Exception {
-        Spaceship spaceship = new Spaceship(null, "Galactica", "X-100", new Date());
+        Spaceship spaceship = getSpaceShip();
         spaceship = spaceshipRepository.save(spaceship);
         mockMvc.perform(
-                        delete(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + ApiConstants.ID, spaceship.getId())
+                        delete(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + spaceship.getId())
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNoContent());
     }

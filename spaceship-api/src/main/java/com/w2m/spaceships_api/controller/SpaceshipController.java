@@ -1,10 +1,10 @@
 package com.w2m.spaceships_api.controller;
 
-import com.w2m.spaceships_api.model.Spaceship;
+import com.w2m.spaceships_api.model.SpaceshipDTO;
 import com.w2m.spaceships_api.service.SpaceshipService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -19,26 +19,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Collection;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/spaceships")
 public class SpaceshipController {
 
     @Autowired
-
     private SpaceshipService spaceshipService;
 
-    @Operation(summary = "Retrieve a paginated list of spaceships", description = "Fetches a paginated list of spaceships with a default size of 10 per page.")
+    @Operation(summary = "Retrieve a paginated list of spaceships", description = "Fetches a paginated list of spaceships with a default size of 5 per page.")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully retrieved the list of spaceships")
     })
     @GetMapping
-    public ResponseEntity<Page<Spaceship>> getAllSpaceships(
+    public ResponseEntity<Page<SpaceshipDTO>> getAllSpaceships(
             @RequestParam(defaultValue = "0") int page,
-            @RequestParam(defaultValue = "10") int size) {
-        Page<Spaceship> result = spaceshipService.getAllSpaceships(page, size);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+            @RequestParam(defaultValue = "5") int size) {
+
+        Page<SpaceshipDTO> pagedSpaceships = spaceshipService.getAllSpaceships(page, size);
+
+        if (pagedSpaceships.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+
+        return new ResponseEntity<>(pagedSpaceships, HttpStatus.OK);
     }
 
     @Operation(summary = "Get a spaceship by its ID", description = "Retrieves details of a specific spaceship identified by its ID.")
@@ -47,9 +53,11 @@ public class SpaceshipController {
             @ApiResponse(responseCode = "404", description = "Spaceship not found")
     })
     @GetMapping("/{id}")
-    public ResponseEntity<Spaceship> getSpaceshipById(@PathVariable Long id) {
-        Spaceship spaceship = spaceshipService.getSpaceshipById(id);
-        return new ResponseEntity<>(spaceship, HttpStatus.OK);
+    public ResponseEntity<SpaceshipDTO> getSpaceshipById(@PathVariable Long id) {
+        Optional<SpaceshipDTO> spaceship = spaceshipService.getSpaceshipById(id);
+
+        return spaceship.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
+                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
     @Operation(summary = "Search spaceships by name", description = "Searches for spaceships that match a specific name.")
@@ -57,9 +65,12 @@ public class SpaceshipController {
             @ApiResponse(responseCode = "200", description = "Successfully retrieved spaceships by name")
     })
     @GetMapping("/search")
-    public ResponseEntity<List<Spaceship>> getSpaceshipsByName(@RequestParam String name) {
-        List<Spaceship> result = spaceshipService.getSpaceshipsByName(name);
-        return new ResponseEntity<>(result, HttpStatus.OK);
+    public ResponseEntity<Collection<SpaceshipDTO>> getSpaceshipsByName(@RequestParam String name) {
+        Collection<SpaceshipDTO> spaceships = spaceshipService.getSpaceshipsByName(name);
+
+        return spaceships.isEmpty() ?
+                new ResponseEntity<>(HttpStatus.NOT_FOUND) :
+                new ResponseEntity<>(spaceships, HttpStatus.OK);
     }
 
     @Operation(summary = "Create a new spaceship", description = "Creates a new spaceship entry in the system.")
@@ -68,8 +79,8 @@ public class SpaceshipController {
             @ApiResponse(responseCode = "400", description = "Bad request, invalid spaceship data")
     })
     @PostMapping
-    public ResponseEntity<Spaceship> createSpaceship(@RequestBody Spaceship spaceship) {
-        Spaceship createdSpaceship = spaceshipService.createSpaceship(spaceship);
+    public ResponseEntity<SpaceshipDTO> createSpaceship(@RequestBody SpaceshipDTO spaceship) {
+        SpaceshipDTO createdSpaceship = spaceshipService.createSpaceship(spaceship);
         return new ResponseEntity<>(createdSpaceship, HttpStatus.CREATED);
     }
 
@@ -80,8 +91,8 @@ public class SpaceshipController {
             @ApiResponse(responseCode = "400", description = "Bad request, invalid data")
     })
     @PutMapping("/{id}")
-    public ResponseEntity<Spaceship> updateSpaceship(@PathVariable Long id, @RequestBody Spaceship spaceship) {
-        Spaceship updatedSpaceship = spaceshipService.updateSpaceship(id, spaceship);
+    public ResponseEntity<SpaceshipDTO> updateSpaceship(@PathVariable Long id, @RequestBody SpaceshipDTO spaceship) {
+        SpaceshipDTO updatedSpaceship = spaceshipService.updateSpaceship(id, spaceship);
         return new ResponseEntity<>(updatedSpaceship, HttpStatus.OK);
     }
 
@@ -91,8 +102,8 @@ public class SpaceshipController {
             @ApiResponse(responseCode = "404", description = "Spaceship not found")
     })
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteSpaceship(@PathVariable Long id) {
-        spaceshipService.deleteSpaceship(id);
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    public ResponseEntity<String> deleteSpaceship(@PathVariable Long id) {
+        String responseMessage = spaceshipService.deleteSpaceship(id);
+        return new ResponseEntity<>(responseMessage, HttpStatus.NO_CONTENT);
     }
 }

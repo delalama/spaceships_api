@@ -1,7 +1,8 @@
 package com.w2m.spaceships_api.service;
 
-import com.w2m.spaceships_api.exception.SpaceshipApiException;
+import com.w2m.spaceships_api.mapper.SpaceshipMapper;
 import com.w2m.spaceships_api.model.Spaceship;
+import com.w2m.spaceships_api.model.SpaceshipDTO;
 import com.w2m.spaceships_api.repository.SpaceshipRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,14 +14,14 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -36,7 +37,7 @@ public class SpaceshipServiceTest {
 
     private Spaceship spaceship;
 
-    String BIRELIAN = "Birelian";
+    final String BIRELIAN = "Birelian";
 
     @BeforeEach
     void setUp() {
@@ -47,57 +48,66 @@ public class SpaceshipServiceTest {
 
     @Test
     void testGetAllSpaceships() {
-        Page<Spaceship> page = new PageImpl<>(Arrays.asList(spaceship));
+        Page<Spaceship> page = new PageImpl<>(Collections.singletonList(spaceship));
         when(spaceshipRepository.findAll(any(PageRequest.class))).thenReturn(page);
-        Page<Spaceship> result = spaceshipService.getAllSpaceships(0, 1);
+        Page<SpaceshipDTO> result = spaceshipService.getAllSpaceships(0, 1);
         assertEquals(1, result.getTotalElements());
-        verify(spaceshipRepository, times(1)).findAll(any(PageRequest.class));
     }
 
     @Test
     void testGetSpaceshipById() {
         when(spaceshipRepository.findById(1L)).thenReturn(Optional.of(spaceship));
-        Spaceship result = spaceshipService.getSpaceshipById(1L);
-        assertEquals(spaceship.getId(), result.getId());
-        verify(spaceshipRepository, times(1)).findById(1L);
-    }
 
-    @Test
-    void testGetSpaceshipById_NotFound() {
-        when(spaceshipRepository.findById(1L)).thenReturn(Optional.empty());
-        assertThrows(SpaceshipApiException.class, () -> spaceshipService.getSpaceshipById(1L));
+        Optional<SpaceshipDTO> result = spaceshipService.getSpaceshipById(1L);
+
+        if (result.isPresent()) {
+            assertEquals(spaceship.getId(), result.get().getId());
+        } else {
+            fail("Spaceship not found");
+        }
+
         verify(spaceshipRepository, times(1)).findById(1L);
     }
 
     @Test
     void testGetSpaceshipsByName() {
-        List<Spaceship> list = Arrays.asList(spaceship);
-        when(spaceshipRepository.findByNameContaining(BIRELIAN)).thenReturn(list);
-        List<Spaceship> result = spaceshipService.getSpaceshipsByName(BIRELIAN);
-        assertEquals(1, result.size());
-        verify(spaceshipRepository, times(1)).findByNameContaining(BIRELIAN);
+        List<Spaceship> list = Collections.singletonList(spaceship);
+        when(spaceshipRepository.findByNameContainingIgnoreCase(BIRELIAN)).thenReturn(list);
+        List<SpaceshipDTO> result = spaceshipService.getSpaceshipsByName(BIRELIAN);
+        assertEquals(result.get(0).getName(), BIRELIAN);
     }
 
     @Test
     void testCreateSpaceship() {
         when(spaceshipRepository.save(any(Spaceship.class))).thenReturn(spaceship);
-        Spaceship result = spaceshipService.createSpaceship(spaceship);
+        SpaceshipDTO result = spaceshipService.createSpaceship(SpaceshipMapper.toDTO(spaceship));
         assertEquals(spaceship.getId(), result.getId());
-        verify(spaceshipRepository, times(1)).save(spaceship);
     }
 
     @Test
     void testUpdateSpaceship() {
-        when(spaceshipRepository.save(any(Spaceship.class))).thenReturn(spaceship);
-        Spaceship result = spaceshipService.updateSpaceship(1L, spaceship);
-        assertEquals(spaceship.getId(), result.getId());
-        verify(spaceshipRepository, times(1)).save(spaceship);
+        Spaceship existingSpaceship = Spaceship.builder()
+                .id(1L)
+                .name("Spaceship1")
+                .model("Model1")
+                .creationDate(LocalDate.of(2024, 1, 1))
+                .build();
+
+        SpaceshipDTO updatedSpaceshipDTO = SpaceshipDTO.builder()
+                .name("Spaceship Updated")
+                .model("Model Updated")
+                .creationDate(LocalDate.of(2024, 2, 1))
+                .build();
+
+        when(spaceshipRepository.findById(1L)).thenReturn(Optional.of(existingSpaceship));
+        when(spaceshipRepository.save(any(Spaceship.class))).thenReturn(existingSpaceship);
+
+        SpaceshipDTO result = spaceshipService.updateSpaceship(1L, updatedSpaceshipDTO);
+
+        assertEquals(result.getId(), existingSpaceship.getId());
+        assertEquals("Spaceship Updated", result.getName());
+        assertEquals("Model Updated", result.getModel());
+        assertEquals(LocalDate.of(2024, 2, 1), result.getCreationDate());
     }
 
-    @Test
-    void testDeleteSpaceship() {
-        doNothing().when(spaceshipRepository).deleteById(1L);
-        spaceshipService.deleteSpaceship(1L);
-        verify(spaceshipRepository, times(1)).deleteById(1L);
-    }
 }

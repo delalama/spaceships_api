@@ -1,16 +1,19 @@
 package com.w2m.spaceships_api.service;
 
+import com.w2m.spaceships_api.exception.service.SpaceshipServiceNotFoundException;
+import com.w2m.spaceships_api.mapper.SpaceshipMapper;
 import com.w2m.spaceships_api.model.Spaceship;
+import com.w2m.spaceships_api.model.SpaceshipDTO;
 import com.w2m.spaceships_api.repository.SpaceshipRepository;
-import com.w2m.spaceships_api.exception.SpaceshipApiException;
-import org.apache.logging.log4j.Level;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SpaceshipService {
@@ -18,29 +21,44 @@ public class SpaceshipService {
     @Autowired
     private SpaceshipRepository spaceshipRepository;
 
-    public Page<Spaceship> getAllSpaceships(int page, int size) {
-        return spaceshipRepository.findAll(PageRequest.of(page, size));
+    public Page<SpaceshipDTO> getAllSpaceships(int page, int size) {
+        Page<Spaceship> spaceships = spaceshipRepository.findAll(PageRequest.of(page, size));
+        return spaceships.map(SpaceshipMapper::toDTO);
     }
 
     @Cacheable(value = "spaceships", key = "#id")
-    public Spaceship getSpaceshipById(Long id) {
-        return spaceshipRepository.findById(id).orElseThrow(() -> new SpaceshipApiException("Spaceship with ID: " + id + " not found", Level.WARN));
+    public Optional<SpaceshipDTO> getSpaceshipById(Long id) {
+        Optional<Spaceship> spaceship = spaceshipRepository.findById(id);
+        return spaceship.map(SpaceshipMapper::toDTO);
     }
 
-    public List<Spaceship> getSpaceshipsByName(String namePart) {
-        return spaceshipRepository.findByNameContaining(namePart);
+    @Cacheable(value = "spaceships", key = "#namePart")
+    public List<SpaceshipDTO> getSpaceshipsByName(String namePart) {
+        List<Spaceship> spaceships = spaceshipRepository.findByNameContainingIgnoreCase(namePart);
+        return SpaceshipMapper.toDTO(spaceships);
     }
 
-    public Spaceship createSpaceship(Spaceship spaceship) {
-        return spaceshipRepository.save(spaceship);
+    public SpaceshipDTO createSpaceship(SpaceshipDTO spaceship) {
+        Spaceship save = spaceshipRepository.save(SpaceshipMapper.toEntity(spaceship));
+        return SpaceshipMapper.toDTO(save);
     }
 
-    public Spaceship updateSpaceship(Long id, Spaceship spaceship) {
-        spaceship.setId(id);
-        return spaceshipRepository.save(spaceship);
+    public SpaceshipDTO updateSpaceship(Long id, SpaceshipDTO spaceship) {
+        Spaceship existingSpaceship = spaceshipRepository.findById(id)
+                .orElseThrow(() -> new SpaceshipServiceNotFoundException("Spaceship with ID: " + id + " not found"));
+
+        existingSpaceship.setName(spaceship.getName());
+        existingSpaceship.setModel(spaceship.getModel());
+        existingSpaceship.setCreationDate(spaceship.getCreationDate());
+
+        return SpaceshipMapper.toDTO(spaceshipRepository.save(existingSpaceship));
     }
 
-    public void deleteSpaceship(Long id) {
-        spaceshipRepository.deleteById(id);
+    @CacheEvict(value = "spaceships", key = "#id")
+    public String deleteSpaceship(Long id) {
+        Spaceship spaceship = spaceshipRepository.findById(id)
+                .orElseThrow(() -> new SpaceshipServiceNotFoundException("Spaceship with ID: " + id + " not found"));
+        spaceshipRepository.delete(spaceship);
+        return "Deleted spaceship with ID: " + id;
     }
 }

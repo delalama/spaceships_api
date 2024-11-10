@@ -1,5 +1,6 @@
 package com.w2m.spaceships_api.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.w2m.spaceships_api.utils.JsonUtil;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,7 +12,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.time.LocalDate;
+
+import static com.w2m.spaceships_api.utils.Constants.SPACESHIP_DATE_FORMAT;
 
 @Entity
 @Getter
@@ -19,7 +23,7 @@ import java.util.Date;
 @NoArgsConstructor
 @Builder
 @AllArgsConstructor
-public class Spaceship {
+public class Spaceship implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +31,9 @@ public class Spaceship {
 
     private String name;
     private String model;
-    private Date creationDate;
+
+    @JsonFormat(pattern = SPACESHIP_DATE_FORMAT)
+    private LocalDate creationDate;
 
     public String toJson() {
         return JsonUtil.toJson(this);

@@ -15,13 +15,11 @@ public class SecurityConfigDevelop {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .authorizeRequests(auth -> auth
+                .authorizeHttpRequests((requests) -> requests
                         .anyRequest().permitAll()
                 )
-                .formLogin().disable()
-                .httpBasic().disable()
-                .csrf().disable()
-                .headers().frameOptions().sameOrigin();
+                .csrf((csrf) -> csrf.disable())
+                .headers((headers) -> headers.frameOptions().disable());
 
         return http.build();
     }

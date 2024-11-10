@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SpaceshipRepository extends JpaRepository<Spaceship, Long> {
-    List<Spaceship> findByNameContaining(String namePart);
+    List<Spaceship> findByNameContainingIgnoreCase(String namePart);
 }

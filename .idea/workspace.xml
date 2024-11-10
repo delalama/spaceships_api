@@ -1,18 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce45f8db-9180-4b54-8848-c46a0a4bb9a7" name="Changes" comment="gitIgnore">
-      <change afterPath="$PROJECT_DIR$/spaceship-api/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spaceship-api/dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/aspect/CacheAspect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/service/SpaceShipServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/service/SpaceshipServiceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/mapper/SpaceshipMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/model/SpaceshipDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/LocalDateAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceCacheTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spaceship-api/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spaceship-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/SpaceshipApiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/SpaceshipApiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/aspect/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/aspect/LogAspect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/ConfigConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/ConfigConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/RedisCacheConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/SwaggerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/SwaggerConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/SecurityConfigDevelop.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/SecurityConfigDevelop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/StartupRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/develop/StartupRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/prod/SecurityConfigProd.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/prod/SecurityConfigProd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/SpaceshipController.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/SpaceshipController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/SpaceshipApiException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/model/Spaceship.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/model/Spaceship.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/repository/SpaceshipRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/repository/SpaceshipRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/JsonUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/JsonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/main/resources/liquibase.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/aspect/LogAspectTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/model/SpaceshipTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/model/SpaceshipTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +70,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2oa4Js11E6Yl8jvAQYLGUBWvLsz" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -68,6 +98,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "run.code.analysis.last.selected.profile": "pProject Default",
     "spring.configuration.checksum": "186eb550af1af5d7518d4fbf2423dc43",
     "vue.rearranger.settings.migration": "true"
   }
@@ -92,13 +123,16 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.w2m.spaceships_api.utils" />
       <recent name="com.w2m.spaceship_api.exception" />
       <recent name="com.w2m.spaceship_api.controller" />
       <recent name="com.w2m.spaceship_api.model" />
       <recent name="com.w2m.spaceship_api.service" />
-      <recent name="com.w2m.spaceship_api.aspect" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.w2m.spaceships_api.model" />
+      <recent name="com.w2m.spaceships_api.service" />
+      <recent name="com.w2m.spaceships_api.repository" />
       <recent name="com.w2m.spaceships_api.configuration" />
       <recent name="com.w2m.spaceship_api.utils" />
     </key>
@@ -121,17 +155,10 @@
       <command value="mvn spring-boot:run" />
       <command value="mvn mvn clean package -DskipTests" />
       <command value="mvn clean package -DskipTests" />
+      <command value="mvn dependency:tree " />
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.SpaceshipApiApplication">
-    <configuration name="All in spaceship-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spaceship-api" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="All in spaceships-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spaceships-api" />
       <option name="PACKAGE_NAME" value="" />
@@ -140,17 +167,58 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GlobalExceptionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spaceship-api" />
+    <configuration name="JsonUtilTest.testLocalDateAdapterSerialization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceships-api" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.w2m.spaceships_api.exception.*" />
+          <option name="PATTERN" value="com.w2m.spaceships_api.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.w2m.spaceship_api.exception" />
-      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceship_api.exception.GlobalExceptionHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.w2m.spaceships_api.utils" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.utils.JsonUtilTest" />
+      <option name="METHOD_NAME" value="testLocalDateAdapterSerialization" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipControllerIntegrationTest.testDeleteSpaceship" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceships-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceships_api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="testDeleteSpaceship" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpaceshipControllerIntegrationTest.testGetAllSpaceshipsNotFoundStatus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceships-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.w2m.spaceships_api.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.w2m.spaceships_api.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.w2m.spaceships_api.controller.SpaceshipControllerIntegrationTest" />
+      <option name="METHOD_NAME" value="testGetAllSpaceshipsNotFoundStatus" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in spaceships-api" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spaceships-api" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/spaceship-api/src/test/java" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -163,41 +231,24 @@
       </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
-      <method v="2" />
-    </configuration>
-    <configuration name="resources.redis: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="redis" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="spaceship-api/src/main/resources/docker-compose.yml" />
-        </settings>
+        <settings />
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="spaceship-api/dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="spaceship-api/dockerfile" />
-        </settings>
+        <settings />
       </deployment>
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.spaceship-api/dockerfile" />
-        <item itemvalue="Docker.resources.redis: Compose Deployment" />
+        <item itemvalue="JUnit.JsonUtilTest.testLocalDateAdapterSerialization" />
+        <item itemvalue="JUnit.java in spaceships-api" />
+        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest.testGetAllSpaceshipsNotFoundStatus" />
         <item itemvalue="JUnit.All in spaceships-api" />
-        <item itemvalue="JUnit.All in spaceship-api" />
-        <item itemvalue="JUnit.GlobalExceptionHandlerTest" />
+        <item itemvalue="JUnit.SpaceshipControllerIntegrationTest.testDeleteSpaceship" />
       </list>
     </recent_temporary>
   </component>
@@ -274,43 +325,118 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java</url>
-          <line>15</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
-          <line>70</line>
+          <line>98</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
-          <line>65</line>
+          <line>93</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/SpaceshipController.java</url>
-          <line>83</line>
-          <option name="timeStamp" value="25" />
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceCacheTest.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/service/SpaceshipService.java</url>
-          <line>26</line>
+          <line>32</line>
           <properties>
             <option name="lambda-ordinal" value="-1" />
           </properties>
-          <option name="timeStamp" value="26" />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/service/SpaceshipServiceNotFoundException.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/exception/GlobalExceptionHandler.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/controller/SpaceshipController.java</url>
+          <line>58</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/configuration/SwaggerConfiguration.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceCacheTest.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/service/SpaceshipServiceTest.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>129</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/JsonUtil.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/model/Spaceship.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/controller/SpaceshipControllerIntegrationTest.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/utils/JsonUtilTest.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/main/java/com/w2m/spaceships_api/utils/JsonUtil.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/spaceship-api/src/test/java/com/w2m/spaceships_api/utils/JsonUtilTest.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/spaceship_api$All_in_spaceship_api.ic" NAME="All in spaceship-api Coverage Results" MODIFIED="1731121802738" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/spaceship_api$All_in_spaceships_api.ic" NAME="All in spaceships-api Coverage Results" MODIFIED="1731204666683" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/spaceship_api$java_in_spaceships_api.ic" NAME="java in spaceships-api Coverage Results" MODIFIED="1731208400898" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/spaceship_api$GlobalExceptionHandlerTest.ic" NAME="GlobalExceptionHandlerTest Coverage Results" MODIFIED="1731122561510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.w2m.spaceship_api.exception.*</FILTER>
     </SUITE>
