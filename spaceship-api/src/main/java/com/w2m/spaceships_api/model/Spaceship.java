@@ -30,6 +30,7 @@ public class Spaceship implements Serializable {
     private Long id;
 
     private String name;
+
     private String model;
 
     @JsonFormat(pattern = SPACESHIP_DATE_FORMAT)

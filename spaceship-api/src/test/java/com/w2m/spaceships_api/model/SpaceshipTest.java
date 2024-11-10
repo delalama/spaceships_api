@@ -1,5 +1,6 @@
 package com.w2m.spaceships_api.model;
 
+import com.w2m.spaceships_api.utils.JsonUtil;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -65,5 +66,10 @@ public class SpaceshipTest {
                 .build();
 
         String json = spaceship.toJson();
+
+        Spaceship spaceshipDeserialized = JsonUtil.fromJson(json, Spaceship.class);
+
+        assertEquals(spaceship.getId(), spaceshipDeserialized.getId());
+        assertEquals(spaceship.getName(), spaceshipDeserialized.getName());
     }
 }

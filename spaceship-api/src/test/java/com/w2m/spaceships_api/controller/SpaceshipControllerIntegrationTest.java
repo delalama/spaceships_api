@@ -1,8 +1,10 @@
 package com.w2m.spaceships_api.controller;
 
 import com.w2m.spaceships_api.model.Spaceship;
+import com.w2m.spaceships_api.model.SpaceshipDTO;
 import com.w2m.spaceships_api.repository.SpaceshipRepository;
 import com.w2m.spaceships_api.utils.ApiConstants;
+import com.w2m.spaceships_api.utils.JsonUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,9 +19,11 @@ import org.springframework.web.context.WebApplicationContext;
 
 import java.time.LocalDate;
 
+import static com.w2m.spaceships_api.utils.ApiConstants.SEARCH;
 import static org.hamcrest.Matchers.hasSize;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -105,7 +109,7 @@ public class SpaceshipControllerIntegrationTest {
         spaceshipRepository.save(spaceship1);
         spaceshipRepository.save(spaceship2);
         mockMvc.perform(
-                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + "search")
+                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + SEARCH)
                                 .param("name", "Galactica")
                                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -114,6 +118,32 @@ public class SpaceshipControllerIntegrationTest {
                         .value("Galactica"))
                 .andExpect(jsonPath("$[1].name")
                         .value("Galactica2"));
+    }
+
+    @Test
+    public void testGetSpaceshipsByName_NotFound() throws Exception {
+        mockMvc.perform(
+                        get(ApiConstants.SLASH + ApiConstants.SPACESHIPS + ApiConstants.SLASH + SEARCH)
+                                .param("name", "NonExistentName")
+                                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void testCreateSpaceship_Success() throws Exception {
+        SpaceshipDTO spaceshipDTO = SpaceshipDTO.builder()
+                .name("Voyager")
+                .model("Intrepid-class")
+                .creationDate(LocalDate.now())
+                .build();
+
+        mockMvc.perform(post(ApiConstants.SLASH + ApiConstants.SPACESHIPS)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(JsonUtil.toJson(spaceshipDTO)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name").value(spaceshipDTO.getName()))
+                .andExpect(jsonPath("$.model").value(spaceshipDTO.getModel()))
+                .andExpect(jsonPath("$.creationDate").exists());
     }
 
     @Test

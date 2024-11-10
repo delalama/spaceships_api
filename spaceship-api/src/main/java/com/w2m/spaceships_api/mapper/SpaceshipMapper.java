@@ -4,13 +4,11 @@ import com.w2m.spaceships_api.model.Spaceship;
 import com.w2m.spaceships_api.model.SpaceshipDTO;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 @Component
-public class SpaceshipMapper {
+public class SpaceshipMapper implements EntityMapper<Spaceship, SpaceshipDTO> {
 
-    public static SpaceshipDTO toDTO(Spaceship spaceship) {
+    @Override
+    public SpaceshipDTO toDto(Spaceship spaceship) {
         if (spaceship == null) {
             return null;
         }
@@ -22,11 +20,8 @@ public class SpaceshipMapper {
                 .build();
     }
 
-    public static List<SpaceshipDTO> toDTO(List<Spaceship> spaceships) {
-        return spaceships.stream().map(SpaceshipMapper::toDTO).collect(Collectors.toList());
-    }
-
-    public static Spaceship toEntity(SpaceshipDTO spaceshipDTO) {
+    @Override
+    public Spaceship toEntity(SpaceshipDTO spaceshipDTO) {
         if (spaceshipDTO == null) {
             return null;
         }
@@ -38,7 +33,4 @@ public class SpaceshipMapper {
                 .build();
     }
 
-    public static List<Spaceship> toEntity(List<SpaceshipDTO> spaceships) {
-        return spaceships.stream().map(SpaceshipMapper::toEntity).collect(Collectors.toList());
-    }
 }
