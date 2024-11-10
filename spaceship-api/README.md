@@ -38,18 +38,11 @@ mvn spring-boot:run
 ```
 
 ### - Docker
-
+Select one of the two entrypoints on dockerfile
 ```bash
-docker build -t spaceships-api .
+docker-compose up --build
 ```
 
-```bash
-docker run -p 8080:8080 spaceships-api
-```
-
-```bash
-docker-compose up
-```
 
 ## Access to Swagger
 
