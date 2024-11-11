@@ -19,7 +19,7 @@ The project utilizes the following key dependencies:
 
 Before running the project, ensure that you have the following installed:
 
-- Java 21: The project is built with Java 21.
+- Java 21 jdk: The project has been developed with Java 21, compatible with Spring 3.2.1.
 - Maven: For managing dependencies and building the project.
 - Docker (optional): For running the application in a containerized environment.
 
