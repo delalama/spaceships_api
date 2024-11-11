@@ -14,7 +14,7 @@ public class LogAspect {
     @Before("execution(* com.w2m.spaceships_api.service.SpaceshipService.getSpaceshipById(Long)) && args(id)")
     public void logBeforeGetSpaceshipById(Long id) {
         if (id < 0) {
-            Logger.log("ASPECT : Trying to fetch a spaceship with a negative ID: ", INFO);
+            Logger.log("ASPECT : Trying to fetch a spaceship with a negative ID: " + id, INFO);
         }
     }
 

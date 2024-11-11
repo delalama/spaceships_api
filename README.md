@@ -25,9 +25,9 @@ Before running the project, ensure that you have the following installed:
 
 ## Launch the project
 
-2 options
-
-### - Maven
+### 2 options
+For evaluation ease first option has develop profile, second prod.
+#### - Maven
 
 ```bash
 mvn clean install
@@ -37,8 +37,8 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-### - Docker
-Select one of the two entrypoints on dockerfile
+#### - Docker
+Select profile by switching entrypoints on dockerfile
 ```bash
 docker-compose up --build
 ```
@@ -58,4 +58,13 @@ develop: All endpoints are open (no authentication).
 
 prod: Only admin should be able to consume endpoints(basic user/pass authentication required).
 
-You can switch on application.properties
+You can switch between them on application.properties
+
+## Evaluation
+The implementation of the queueing system is not being carried out due to configuration problems, the kafka branch has a commit with the implementation.
+
+I have no past knowledge of implementing the queuing system but I understood that the manufacturing of the spaceships could become an asynchronous system, which would persist a ship with an IN_PRODUCTION state, and then send a message to the ship factory, which would be responsible for the manufacturing, when the factory finishes building the ship it sends another kafka message, which is collected in the SpaceshipService , which is responsible for persisting the final state, which can be CREATED, COMPLETED or FAILED
+
+This way the service does not have to wait for an asynchronous response and our API has more availability.
+
+![Texto alternativo](spaceship-api/kafka on spaceship API.png)
