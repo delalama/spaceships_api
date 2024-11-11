@@ -67,4 +67,4 @@ I have no past knowledge of implementing the queuing system but I understood tha
 
 This way the service does not have to wait for an asynchronous response and our API has more availability.
 
-![Kafka_diagram](/spaceship-api/kafka on spaceship API.png)
+![Kafka_diagram](https://github.com/delalama/spaceships_api/blob/master/spaceship-api/kafka%20on%20spaceship%20API.png)
